@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaStar Bank | Churn Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <h2>NovaStar<span>.</span></h2>
+        </div>
+        <ul class="nav-links">
+            <li class="active"><a href="#" id="nav-dashboard">Executive Dashboard</a></li>
+            <li><a href="#" id="nav-lookup">Customer 360</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="header-title">
+                <h1>Executive Dashboard</h1>
+                <p>Monitor churn risk, customer segments, and behavioral trends</p>
+            </div>
+            <div class="user-profile">
+                <div class="avatar">RM</div>
+            </div>
+        </header>
+
+        <!-- Section: Dashboard Insights -->
+        <section id="section-dashboard" class="content-section active">
+            <div class="kpi-cards">
+                <div class="card">
+                    <h3>Total Customer Base</h3>
+                    <h2 id="kpi-total">-</h2>
+                </div>
+                <div class="card">
+                    <h3>Historic Churn Rate</h3>
+                    <h2 id="kpi-rate">-</h2>
+                </div>
+                <div class="card">
+                    <h3>High Risk Cluster</h3>
+                    <h2 id="kpi-risk">-</h2>
+                </div>
+            </div>
+
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3>Risk by Customer Segment</h3>
+                    <canvas id="segmentChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Risk by Behavioral Cluster</h3>
+                    <canvas id="clusterChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Customer Lookup -->
+        <section id="section-lookup" class="content-section">
+            <div class="lookup-container">
+                <h2>Customer 360 View</h2>
+                <div class="search-bar">
+                    <input type="text" id="customer-id-input" list="valid-customers" placeholder="Enter ID (e.g. CUST000001 or 1)">
+                    <datalist id="valid-customers"></datalist>
+                    <button id="btn-search" class="btn primary">Lookup</button>
+                </div>
+                <div style="font-size: 12px; color: var(--text-secondary); margin-top: 5px;">
+                    <em>Hint: Start typing a number to see autocomplete suggestions!</em>
+                </div>
+                
+                <div id="lookup-result" class="result-card hidden">
+                    <div class="result-header">
+                        <div class="profile-info">
+                            <h3 id="res-name">Customer Profile</h3>
+                            <p>ID: <span id="res-id"></span> | Segment: <span id="res-segment"></span></p>
+                        </div>
+                        <div class="risk-badge" id="res-badge">Low Risk</div>
+                    </div>
+                    <div class="result-body">
+                        <div class="details-grid">
+                            <div class="detail-item"><span>Credit Score:</span> <strong id="res-credit"></strong></div>
+                            <div class="detail-item"><span>City:</span> <strong id="res-city"></strong></div>
+                            <div class="detail-item"><span>Tenure (Months):</span> <strong id="res-tenure"></strong></div>
+                            <div class="detail-item"><span>Avg Balance:</span> <strong id="res-balance"></strong></div>
+                            <div class="detail-item"><span>Products Held:</span> <strong id="res-products"></strong></div>
+                            <div class="detail-item"><span>Total Complaints:</span> <strong id="res-complaints"></strong></div>
+                        </div>
+                        
+                        <div class="behavioral-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding: 0 1.5rem 1.5rem;">
+                            <div class="detail-item"><span>Balance Trend Slope:</span> <strong id="res-bal-trend"></strong></div>
+                            <div class="detail-item"><span>Recency Ratio:</span> <strong id="res-recency"></strong></div>
+                        </div>
+
+                        <div class="recommendation-box">
+                            <h4>Actionable RM Recommendation</h4>
+                            <p id="res-rec"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
