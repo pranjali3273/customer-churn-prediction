@@ -74,5 +74,12 @@ weighted avg       0.85      0.86      0.85      2000
 
 By translating these model probabilities into business logic, the dashboard accurately segments users and outputs dynamic retention strategies, allowing relationship managers to prioritize high-risk and high-value customers effectively.
 
+Dashboard images :
+src="https://github.com/user-attachments/assets/2d27fc4f-a58e-4425-a884-f87bf5743da6" 
+src="https://github.com/user-attachments/assets/c3e33315-b08e-4796-9a7c-597e5230151a" src="https://github.com/user-attachments/assets/c17b6ae3-0355-448d-b21b-25ca7a1f8017"
+src="https://github.com/user-attachments/assets/ebb0a325-3113-4eb4-ac3b-546f5f1573a8" 
+
+
+
 
 
